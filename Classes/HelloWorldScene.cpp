@@ -51,6 +51,7 @@ void HelloWorld::menuCallback(CCObject* pSender) {
     CCMenuItem *item = (CCMenuItem *)pSender;
     switch (item->getTag()) {
         case 1: // down start
+            downFilePath = CCFileUtils::sharedFileUtils()->getWritablePath();
             CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(HelloWorld::updateUI), this, 0, false); // HttpClient中参考
             isStop = false;
             this->threadStart();
